@@ -1,0 +1,21 @@
+{
+  "name": "procom-24",
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "server:start": "yarn workspace @procom-24/server server",
+    "client:dev": "yarn workspace @procom-24/client dev",
+    "client:build": "yarn workspace @procom-24/client build",
+    "start:all": "concurrently \"npm run server:start\" \"npm run client:dev\"",
+    "reset": "rm -rf ./node_modules && rm -rf package-lock.json && rm -rf ./packages/*/node_modules && rm -rf *.lock && rm -rf ./packages/*/node_modules/*.lock && yarn install"
+  },
+  "description": "-",
+  "repository": "-",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
